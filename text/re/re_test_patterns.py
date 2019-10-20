@@ -44,3 +44,19 @@ if __name__ == '__main__':
     ])
 
 # 1.3.4.2 字符集
+# 字符集是一组字符，包含可以与模式中当前位置匹配的所有字符。
+    test_patterns('abbaabbba', [
+        ('[ab]', '匹配a或b'),
+        ('a[ab]+', 'a后面跟着1个或多个a或b'),
+        ('a[ab]+?','a后面跟着1个a或b')
+    ])
+
+# 尖字符（^）意味着要查找不在这个尖字符后面的集合中的字符。
+    test_patterns('This is some text -- with punctuation.',[
+        ('[^-. ]+','查找不包含字符 -、. 或空格的所有子串')
+    ])
+
+# 字符区间（character range）定义一个字符集，包含指定的起点和终点之间所有连续的字符。
+    test_patterns('This is some text -- with punctuation.',[
+        ()
+    ])
